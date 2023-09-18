@@ -1,0 +1,69 @@
+name: Container Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+        MYSQL_USERNAME: ${{ secrets.MYSQL_USERNAME }}
+        MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Compose
+      run: docker-compose --version
+      continue-on-error: true
+
+    - name: Build and start containers
+      run: |
+        docker-compose -f ../../docker-compose.yml up --build -d
+        sleep 40
+
+    - name: Check Nginx authentication page
+      run: |
+        docker ps -a | grep my-nginx
+        curl -I http://localhost:80
+
+    - name: Check React app container
+      run: |
+        docker ps -a | grep react-app-container
+
+    - name: Check Elasticsearch service
+      run: |
+        docker ps -a | grep my-elasticsearch
+        curl -I http://elasticsearch-container:9200
+    
+        - name: Check MYSQL_USERNAME Secret
+        run: |
+          if [ -z "$MYSQL_USERNAME" ]; then
+            echo "MYSQL_USERNAME secret is missing!"
+            exit 1
+          else
+            echo "MYSQL_USERNAME secret is present."
+          fi
+  
+    - name: Check MYSQL_PASSWORD Secret
+      run: |
+        if [ -z "$MYSQL_PASSWORD" ]; then
+          echo "MYSQL_PASSWORD secret is missing!"
+          exit 1
+        else
+          echo "MYSQL_PASSWORD secret is present."
+        fi
+
+    - name: Check MySQL container
+      run: |
+        # Perform a check to ensure that the MySQL container is running
+        docker ps -a | grep my-mysql
+        #Is mysql service running
+        docker exec -it mysql-container mysql -u$MYSQL_USERNAME -p$MYSQL_USERNAME -e "SHOW DATABASES;
+
+    - name: Clean up
+      run: docker-compose -f ../../docker-compose.yml down

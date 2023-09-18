@@ -18,7 +18,7 @@ services:
       - mysql
 
   # Elasticsearch
-  container_name: my-nginx
+  container_name: my-elasticsearch
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
     environment:
