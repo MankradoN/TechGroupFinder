@@ -3,8 +3,8 @@ import express from 'express';
 import path from 'path';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import Home from './src/pages/Home';
-import Favorites from './src/pages/Favourites'; 
+import Home from './src/components/pages/Home';
+import Favorites from './src/components/pages/Favourites'; 
 
 const app = express();
 const port = process.env.PORT || 3001;

@@ -7,24 +7,23 @@ services:
     image: node:latest
     working_dir: /latest
     volumes:
-      - ./app:/app
+      - ./app/my-app:/app
     environment:
       - NODE_ENV=development # Set to 'production' for production environment
     command: npm start 
     ports:
       - "3000:3000"
     depends_on:
-      - elasticsearch
       - mysql
 
   # Elasticsearch
-  container_name: my-elasticsearch
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
-    environment:
-      - discovery.type=single-node
-    ports:
-      - "9200:9200"
+  # container_name: my-elasticsearch
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
+  #   environment:
+  #     - discovery.type=single-node
+  #   ports:
+  #     - "9200:9200"
 
   # Nginx
   nginx:
