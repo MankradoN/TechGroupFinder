@@ -70,7 +70,6 @@ export default function App() {
                     <Results
                       titleField={getConfig().titleField}
                       urlField={getConfig().urlField}
-                      // thumbnailField={getConfig().thumbnailField}
                       thumbnailField="organization_logo"
                       shouldTrackClickThrough={true}
                     />
