@@ -28,7 +28,7 @@ const CustomResultView = ({ result }) => {
         <div className="sui-result__image">
           <img src={organization_logo.raw} alt="" />
         </div>
-        <div>
+        <div style={{ paddingTop: '8%' }}>
         <div className="sui-result__header">
         <a className="sui-result__title sui-result__title-link" href={url.raw} target="_blank" rel="noopener noreferrer">
           {name.raw}
