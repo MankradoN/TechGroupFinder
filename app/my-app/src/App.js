@@ -26,6 +26,8 @@ import {
   getFacetFields
 } from "./config/config-helper";
 
+import CustomResultView from './CustomResultView';
+
 const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
 const connector = new AppSearchAPIConnector({
   searchKey,
@@ -72,6 +74,7 @@ export default function App() {
                       urlField={getConfig().urlField}
                       thumbnailField="organization_logo"
                       shouldTrackClickThrough={true}
+                      resultView={CustomResultView}
                     />
                   }
                   bodyHeader={
