@@ -1,12 +1,7 @@
 import config from "../config/engine.json";
 
 /**
- * This file abstracts most logic around the configuration of the Reference UI.
- *
- * Configuration is an important part of the "reusability" and "generic-ness" of
- * the Reference UI, but if you are using this app as a starting point for own
- * project, everything related to configuration can largely be thrown away. To
- * that end, this file attempts to contain most of that logic to one place.
+ 
  */
 
 export function getConfig() {
@@ -36,8 +31,8 @@ function capitalizeFirstLetter(string) {
 }
 
 export function getTitleField() {
-  // If no title field configuration has been provided, we attempt
-  // to use a "title" field, if one exists
+  // If no title field configuration has been provided, 
+  // use a "title" field, if one exists
   return getConfig().titleField || "title";
 }
 
