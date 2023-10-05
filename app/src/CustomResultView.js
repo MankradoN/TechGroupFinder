@@ -9,15 +9,24 @@ const CustomResultView = ({
           <img src={result.organization_logo.raw} alt="" />
         </div>
         <div className="sui-result__header">
-        <h3>
-          <a onClick={onClickLink} href={result.url.raw}>
-            {result.name.raw}
+        <h2>
+          <a onClick={onClickLink}
+           href={result.url.raw} 
+           className="custom-link"
+           style={{
+            color: 'black',
+            textDecoration: 'none',
+            transition: 'color 0.3s' 
+          }}
+          onMouseOver={(e) => e.target.style.color = 'grey'}
+          onMouseOut={(e) => e.target.style.color = 'blue'}
+           >
+            {result.name.snippet}
           </a>
-          </div>
           <div className="sui-result__body"><li><h6>{result.city.raw}</h6></li></div>
-        </h3>
+        </h2>
         
-      
+      </div>
       
       </div>
       
