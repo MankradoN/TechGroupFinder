@@ -17,16 +17,13 @@ jobs:
         run: |
           docker-compose -f ./docker-compose.yml up -d
           docker-compose -f ./docker-compose.yml ps
-
-      - name: Wait for containers to start
-        run: |
-          sleep 30
+          sleep 30  # Wait for containers to start
 
       - name: Run npm test inside container
         run: |
-          docker exec -it my-react-app npm install
-          docker exec -it my-react-app npm test
+          docker exec -it my-react-app sh -c "cd /app && npm install && npm test"
 
       - name: Stop and remove containers
         run: |
           docker-compose -f ./docker-compose.yml down
+
