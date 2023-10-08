@@ -28,6 +28,7 @@ import {
 
 
 const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
+
 const connector = new AppSearchAPIConnector({
   searchKey,
   engineName,

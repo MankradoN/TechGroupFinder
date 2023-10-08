@@ -1,17 +1,14 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import App from './App'; 
-
-
-test('Search box is present', () => {
-  // Render the App component
-  const { getByLabelText } = render(<App />);
-  
-  // Use getByLabelText to find the search box element by its label
-  const searchBox = getByLabelText('Search'); // Adjust the label text as needed
-  
-  // Assert that the search box is present in the document
-  expect(searchBox).toBeInTheDocument();
+import { get } from 'axios';
+test('Check if app is running on localhost:3000', async () => {
+  try {
+    const response = await get('http://localhost:3000');
+    expect(response.status).toBe(200);
+  } catch (error) {
+    console.log(error)
+    expect(error).toBeNull();
+  }
 });
+
+
+
 
