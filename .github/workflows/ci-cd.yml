@@ -24,6 +24,7 @@ jobs:
 
       - name: Run npm test inside container
         run: |
+          docker exec -it my-react-app npm install
           docker exec -it my-react-app npm test
 
       - name: Stop and remove containers
