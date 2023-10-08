@@ -5,11 +5,9 @@ services:
   react-app:
     container_name: my-react-app
     image: node:latest
-    working_dir: /latest
     volumes:
-      - ./app/my-app:/app
-    environment:
-      - NODE_ENV=development
-    command: npm start 
+      - ./app:/app
+    working_dir: /app
+    command: npm start
     ports:
       - "3000:3000"

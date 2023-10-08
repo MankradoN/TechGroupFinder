@@ -1,6 +1,5 @@
 {
-  "type": "module",
-  "name": "app-search-reference-ui-react",
+"name": "app-search-reference-ui-react",
   "version": "1.7.0",
   "private": true,
   "dependencies": {
