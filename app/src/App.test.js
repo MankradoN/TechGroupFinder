@@ -14,7 +14,7 @@ test('should return a successful response', async () => {
 })
 
 
-describe('AppSearchAPIConnector', () => {
+describe('Check connector settings', () => {
   let connector;
 
   beforeAll(() => {
