@@ -26,7 +26,8 @@ jobs:
 
       - name: Run npm test inside container
         run: |
-          docker exec my-react-app sh -c "cd /app && npm install && npm test" && timeout 300s docker stop my-react-app
+          timeout 300s docker exec my-react-app sh -c "cd /app && npm install && npm test"
+
 
 
       - name: Stop and remove containers
