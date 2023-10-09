@@ -1,5 +1,4 @@
 import { get } from 'axios';
-const AppSearchAPIConnector = require('@elastic/search-ui-app-search-connector');
 const { getConfig } = require('./config/config-helper');
 
 describe('App Running on localhost:3000', () => {
