@@ -1,13 +1,14 @@
 {
-  "endpointBase": "https://2b38c72cad81439192997da7087bdb7a.ent-search.us-central1.gcp.cloud.es.io",
-  "engineName": "tech-groups",
-  "searchKey": "search-4rz3oyicjkdc54jf511heij1",
-  "searchFields": ["diversity_focus", "city", "technology_focus"],
-  "resultFields": ["city"],
-  "querySuggestFields": ["title"],
-  "titleField": "name",
-  "urlField": "url",
-  "thumbnailField": "organization_logo",
-  "sortFields": ["city"],
-  "facets": ["technology_focus", "city", "diversity_focus"]
-}
+    "endpointBase": "https://techgroupfinderdeployment.ent.eu-west-2.aws.cloud.es.io",
+    "engineName": "techfinderengine",
+    "searchKey": "search-bcgpxshg2tj17eft5buxzz15",
+    "searchFields": ["diversity_focus", "city", "technology_focus"],
+    "resultFields": ["city"],
+    "querySuggestFields": ["title"],
+    "titleField": "name",
+    "urlField": "url",
+    "thumbnailField": "organization_logo",
+    "sortFields": ["city"],
+    "facets": ["technology_focus", "city", "diversity_focus"]
+  }
+  
