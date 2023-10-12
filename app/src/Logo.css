@@ -1,0 +1,30 @@
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+  .letter-D {
+    color: #FF5733; /* Red color for D */
+  }
+  
+  .letter-I {
+    color: #33FF57; /* Green color for I */
+  }
+  
+  .letter-V {
+    color: #3366CC; /* Blue color for V */
+  }
+  
+  .letter-E {
+    color: #FFD700; /* Gold color for E */
+  }
+  
+  .letter-R {
+    color: #FF3383; /* Pink color for R */
+  }
+  
+  .letter-S {
+    color: #9932CC; /* Purple color for S */
+  }
+  

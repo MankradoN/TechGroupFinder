@@ -1,5 +1,5 @@
 import React from "react";
-
+import Logo from "./Logo";
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 import CustomResultView from "./CustomResultView"
 import {
@@ -54,7 +54,12 @@ export default function App() {
             <div className="App">
               <ErrorBoundary>
                 <Layout
-                  header={<SearchBox autocompleteSuggestions={true} />}
+                  header={
+                  <div>
+                    <Logo/>
+                    <SearchBox autocompleteSuggestions={true} />
+                  </div>
+                }
                   sideContent={
                     <div>
                       {wasSearched && (

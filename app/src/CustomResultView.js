@@ -8,7 +8,7 @@ const CustomResultView = ({
         <div className="sui-result__image">
           <img src={result.organization_logo.raw} alt="" />
         </div>
-        <div className="sui-result__header">
+        <div className="sui-result__title">
         <h2>
           <a onClick={onClickLink}
            href={result.url.raw} 
